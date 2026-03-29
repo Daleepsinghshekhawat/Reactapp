@@ -5,18 +5,18 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import Services from "./Services";
+import Header from "./Header";
 function App() {
-  const [count, setCount] = useState(0);
-
+  let user = ["hello everone  welcome to my channel daleep"];
   return (
     <BrowserRouter>
-      <home />
-
+      <Header />
+   
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/home" element={<Home user={user} />} />
+        <Route path="/about" element={<About  user={user} />} />
+        <Route path="/contact" element={<Contact user={user}/>} />
+        <Route path="/services" element={<Services user={user} />} />
       </Routes>
 
       <h1>Vite + React with daleep</h1>
