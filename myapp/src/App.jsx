@@ -1,26 +1,21 @@
 import { useState } from "react";
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
-import Contact from "./Contact";
-import Services from "./Services";
 import Header from "./Header";
+import Counter from "./Counter";
 function App() {
-  let user = ["hello everone  welcome to my channel daleep"];
+  let user = [1,1,2,3,4,5,6];
   return (
-    <BrowserRouter>
-      <Header />
+      <BrowserRouter>
+        // <Header />
+        <Routes>
+          <Route path="/" element={<Home usr={user}  />} />
+          <Route path="/about" element={<About usr={user} name="daleep"/>} />
+          <Route path="/counter" element={<Counter />} />
+        </Routes>
+      </BrowserRouter>
    
-      <Routes>
-        <Route path="/home" element={<Home user={user} />} />
-        <Route path="/about" element={<About  user={user} />} />
-        <Route path="/contact" element={<Contact user={user}/>} />
-        <Route path="/services" element={<Services user={user} />} />
-      </Routes>
-
-      <h1>Vite + React with daleep</h1>
-    </BrowserRouter>
   );
 }
 

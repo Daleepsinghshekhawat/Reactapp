@@ -1,11 +1,12 @@
 import React from "react";
 
-const Home = ({ user }) => {
+const Home = (props) => {
+  let user = props.usr;
   return (
     <div>
       <h1>Home</h1>
       <p>Welcome to the home page!</p>
-      <p>{user}</p>
+      <p>{user.map((item)=>{return item;})}</p>
     </div>
   );
 };
